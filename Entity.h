@@ -30,7 +30,7 @@ public:
 
    virtual void MoveEntity(const Entity A, int x, int y);
 
-   virtual void AttackEntity(const Entity Target, const Entity Attacker, const int n);
+   virtual void AttackEntity( const Entity Attacker, const int n);
 };
 
 
