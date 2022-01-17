@@ -37,11 +37,11 @@ void Entity::MoveEntity(const Entity A, int x , int y) {
     this->y= A.y+y;
 }
 // mutam entitatea intr-o alta coordonata
- void Entity::AttackEntity(const Entity Target, const Entity Attacker, const int n) {
-    this->hp = Target.hp-n*Attacker.atk;
+ void Entity::AttackEntity(const Entity Attacker, const int n) {
+    this->hp = this->hp-n*Attacker.atk;
     if(this->hp<0) this->hp=0;
 }
-// Enitatea attacker ataca entitatea target
+// Enitatea attacker ataca entitatea 
 Entity::~Entity() {
 
 }
@@ -51,7 +51,6 @@ std::ostream &operator<<(std::ostream &os, const Entity &entity) {
        << entity.name << " description: " << entity.description;
     return os;
 }
-
 
 
 
