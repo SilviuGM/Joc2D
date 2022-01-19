@@ -3,12 +3,13 @@
 //
 
 #include "Entity.h"
+#include "Exceptii.h"
 
 Entity::Entity(int x, int y, int hp, int atk, const std::string &name, const std::string &description) : x(x),
                                                                                                                  y(y),
                                                                                                                  hp(hp),
                                                                                                                  atk(atk),
-                                                                                                                 name(name),
+                                                                                                                     name(name),
                                                                                                                  description(
                                                                                                                          description) {}
 Entity::Entity(const Entity &copy) {
@@ -33,6 +34,7 @@ bool Entity::operator!=(const Entity &rhs) const {
 }
 
 void Entity::MoveEntity(const Entity A, int x , int y) {
+    if(x>100 || y>100) throw Eroare_miscare();
     this->x = A.x+x;
     this->y= A.y+y;
 }
@@ -41,16 +43,23 @@ void Entity::MoveEntity(const Entity A, int x , int y) {
     this->hp = this->hp-n*Attacker.atk;
     if(this->hp<0) this->hp=0;
 }
-// Enitatea attacker ataca entitatea 
+// Enitatea attacker ataca entitatea target
 Entity::~Entity() {
 
 }
 
 std::ostream &operator<<(std::ostream &os, const Entity &entity) {
-    os << "x: " << entity.x << " y: " << entity.y << " hp: " << entity.hp << " atk: " << entity.atk << " name: "
-       << entity.name << " description: " << entity.description;
+
+    return entity.print(os);
+}
+
+std::ostream &Entity::print(std::ostream &os) const {
+    os << "x: " << this->x << " y: " << this->y << " hp: " << this->hp << " atk: " << this->atk << " name: "
+       << this->name << " description: " << this->description;
     return os;
 }
+
+
 
 
 
