@@ -4,9 +4,9 @@
 
 #include "Item.h"
 
+int Item::idmax=0;
 
-
-Item::Item(const std::string &name, int price, const std::string &rarity) : name(name), price(price), rarity(rarity) {}
+Item::Item(const std::string &name, int price, const std::string &rarity) : name(name), price(price), rarity(rarity), id(idmax) {idmax++;}
 
 Item::Item(const Item &copy) {
     this->name = copy.name;
@@ -29,7 +29,7 @@ Item::~Item() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Item &item) {
-    os << "name: " << item.name << " price: " << item.price << " rarity: " << item.rarity;
+    os << " name: " << item.name << "\n price: " << item.price << "\n rarity: " << item.rarity << "\n";
     return os;
 }
 
