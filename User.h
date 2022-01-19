@@ -25,7 +25,6 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const User &user);
 
-    void setUsername(const std::string &username);
 
 };
 
