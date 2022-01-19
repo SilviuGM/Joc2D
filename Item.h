@@ -11,6 +11,8 @@ class Item {
 private: std::string name;
     int price;
     std::string rarity;
+    int id;
+    static int idmax;
 public:
     Item() = default;
 
@@ -30,3 +32,4 @@ public:
 
 
 #endif //PROIECTOOP_ITEM_H
+
