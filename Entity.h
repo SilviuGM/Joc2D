@@ -28,6 +28,8 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Entity &entity);
 
+    virtual std::ostream& print(std::ostream& os) const;
+
    virtual void MoveEntity(const Entity A, int x, int y);
 
    virtual void AttackEntity( const Entity Attacker, const int n);
