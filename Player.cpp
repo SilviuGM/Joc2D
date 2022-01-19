@@ -19,3 +19,17 @@ bool Player::operator==(const Player &rhs) const {
 bool Player::operator!=(const Player &rhs) const {
     return !(rhs == *this);
 }
+
+void Player::AddItem(std::shared_ptr<Item> item) {
+    this->Inventory.push_back(std::make_shared<Item>(*item));
+
+}
+
+std::ostream &Player::print(std::ostream &os) const {
+   Entity::print(os);
+   os <<  "User: " << this->Owner << "\n";
+   os << "Inventar: \n";
+   for(const auto& Item:this->Inventory ){
+       os << "Item: \n" << *Item << "\n";
+   }
+}
