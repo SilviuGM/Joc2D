@@ -4,6 +4,9 @@
 #include "User.h"
 #include "Player.h"
 #include "Exceptii.h"
+#include "Template.h"
+#include "ItemFactory.h"
+#include "UserBuilder.h"
 
 int main() {
      try {
