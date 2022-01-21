@@ -12,6 +12,7 @@ private:
     std::string username;
     std::string password;
     std::string code;
+    friend class UserBuilder;
 public:
     User() = default;
 
