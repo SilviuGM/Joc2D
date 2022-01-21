@@ -7,6 +7,16 @@
 
 int main() {
      try {
+         EntityTemplate<int> t (2,3,5,6,"t","test");
+         EntityTemplate<float> f (2.7,3.3,5.6,6.5,"t","test");
+         f.MoveEntity(f,5.3,5.9);
+         f.afisare();
+         t.afisare();
+         Item Carte= ItemFactory::Book();
+         std::cout << Carte<< "\n";
+         UserBuilder bb;
+         User Mihai= bb.username("Mihai").password("Miahi123").code("233455").build();
+         std::cout << Mihai << "\n";
         Entity A(2, 3, 5, 6, "Silver", "player");
         Entity B(3, 5, 100, 9, "Crow", "enemy");
         std::cout << A;
