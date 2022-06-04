@@ -8,7 +8,7 @@
 #include <ostream>
 
 class Entity {
-private:
+protected:
     int x,y;
     int hp, atk;
     std::string name;
@@ -22,6 +22,8 @@ public:
 
     virtual ~Entity();
 
+    Entity &operator=(Entity const&e) ;
+
     bool operator==(const Entity &rhs) const;
 
     bool operator!=(const Entity &rhs) const;
@@ -32,7 +34,17 @@ public:
 
    virtual void MoveEntity(const Entity A, int x, int y);
 
-   virtual void AttackEntity( const Entity Attacker, const int n);
+   virtual void AttackEntity(  Entity Attacker, const int n);
+
+    int getX() const;
+
+    int getY() const;
+
+
+
+    int getAtk() const;
+
+
 };
 
 
