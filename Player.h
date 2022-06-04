@@ -17,14 +17,17 @@ std::vector<std::shared_ptr<Item>> Inventory;
 public:
     Player() = default;
     Player(int x, int y, int hp, int atk, const std::string &name, const std::string &description, const User &owner);
-    Player( const Player& copie );
-
+    Player( const Player& copy );
+    Player &operator=(Player const&p) ;
     void AddItem(std::shared_ptr<Item> item);
     bool operator==(const Player &rhs) const;
 
     bool operator!=(const Player &rhs) const;
 
     std::ostream& print(std::ostream& os) const override;
+    void MoveEntity(const Entity A, int x, int y);
+
+    void AttackEntity( const Entity Attacker, const int n);
 };
 
 
