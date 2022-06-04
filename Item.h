@@ -20,6 +20,8 @@ public:
 
     Item(const Item& copy);
 
+    Item &operator=(Item const&i);
+
     bool operator==(const Item &rhs) const;
 
     bool operator!=(const Item &rhs) const;
@@ -32,4 +34,3 @@ public:
 
 
 #endif //PROIECTOOP_ITEM_H
-
