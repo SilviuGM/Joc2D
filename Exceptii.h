@@ -15,4 +15,8 @@ class Eroare_miscare: public Eroare_entity{
 public:
     Eroare_miscare();
 };
+
+class Eroare_attack: public Eroare_entity{
+public: Eroare_attack();
+};
 #endif //PROIECTOOP_EXCEPTII_H
