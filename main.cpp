@@ -10,7 +10,8 @@
 
 int main() {
      try {
-         EntityTemplate<int> t (2,3,5,6,"t","test");
+
+        EntityTemplate<int> t (2,3,5,6,"t","test");
          EntityTemplate<float> f (2.7,3.3,5.6,6.5,"t","test");
          f.MoveEntity(f,5.3,5.9);
          f.afisare();
@@ -41,10 +42,18 @@ int main() {
         Player Silviu(5, 5, 5, 5, "StarShine", "player", Utilizator);
         std::cout << Silviu;
         std::cout << std::endl;
-        Silviu.MoveEntity(Silviu, 10, 10);
+         Entity *p;
+
+        p= &Silviu;
+         p->MoveEntity(Silviu,2,2);
+         p->AttackEntity(Silviu,2);
+         std::cout<<"test functii virtuale"<< Silviu;
+         std::cout << std::endl;
+
+         Silviu.MoveEntity(Silviu, 10, 10);
         std::cout << Silviu;
         std::cout << std::endl;
-        B.AttackEntity(Silviu, 1);
+        B.AttackEntity(Silviu, -1);
         std::cout << B;
         std::cout << std::endl;
         std::cout << Silviu;
@@ -53,9 +62,14 @@ int main() {
         Silviu.AddItem( std::make_shared<Item>(Keychain) );
         Silviu.AddItem( std::make_shared<Item>(Branza) );
         std::cout<< Silviu ;
-        Silviu.MoveEntity(Silviu, 101, 10)
+        Silviu.MoveEntity(Silviu, 101, 10);
 
      }  catch(Eroare_miscare& Eroare) {std::cout << Eroare.what();}
      catch(Eroare_entity& Eroare) {std::cout << Eroare.what();}
+catch (Eroare_attack& Eroare) {std::cout << Eroare.what();}
+
+
+
+
 
 }
